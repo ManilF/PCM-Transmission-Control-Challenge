@@ -25,7 +25,7 @@ Hello and welcome to the PCM development challenge, here you will be tasked with
 ### Controls 101
 For those of you who are not familiar with controls, here is a brief overview of what controls are and how they work. A control system is a system that manages, commands, directs, or regulates the behavior of other devices or systems. In this challenge, you will be implementing a control system that will take in inputs from the plant and output commands to control the plant's behavior. A "Plant" can be many things, such as a motor, a vehicle, or even a process in a factory. The plant is the system that you are trying to control.
 
-```
+```mermaid
 graph TD
     A[Plant] -->|Input| B[Controller]
 ```
