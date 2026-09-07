@@ -27,7 +27,6 @@ For those of you who are not familiar with controls, here is a brief overview of
 
 graph TD
     A[Plant] -->|Input| B[Controller]
-    B -->|Output| A
 
 
 
