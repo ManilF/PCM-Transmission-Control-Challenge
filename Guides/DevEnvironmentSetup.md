@@ -31,6 +31,33 @@ Once the repository has been forked, download a local copy to your computer.
 4. Open a terminal, Git Bash, or command prompt.
 5. Run: git clone https://github.com/\<your-username>/PCM-Dev-Challenge_EIC-Y1.git
 6. Navigate to the repository: cd PCM-Dev-Challenge_EIC-Y1
+## 2.5 Open the Repository in MATLAB
+1. Open MATLAB.
+2. Select Browse for folder, navigate to the folder where you cloned the repository, and select open.
+3. Double click on the `PCM-Dev-Challenge_EIC-Y1.prj` file to open the project in MATLAB.
 
 # 3. Introduction to the Provided Files + Models
+
+
+## 3.1. Models
+This is where all the simulink models are stored, there are three in total.
+- `TransmissionSystem.slx`: The main model that you will be using, this contains the input, output and signal routing. This model also contains the plant and the controller, however only as references.
+- `TransmissionPlant.slxp`: The plant model, which models the behaviour of the combustion engine, torque converter, 10-speed transmission, and longitudinal vehicle. This file has been provided in a read-only format as you will not be needing/allowed to edit this during the challenge.
+- `TransmissionController.slx`: The controller model, which has been provided containing a basic controller that you will be modifying and improving during the challenge. 
+
+### 3.1.1. TransmissionSystem.slx
+![alt text](Images/TransmissionSystem_TopLevel.png)
+
+### 3.1.2. TransmissionPlant.slxp
+
+### 3.1.3. TransmissionController.slx
+
+
+
+
+## 3.2. InputFiles
+
+## 3.3. Requirements_Testing
+
+## 3.4. Guides
 
