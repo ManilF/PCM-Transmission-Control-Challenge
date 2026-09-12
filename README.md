@@ -8,7 +8,7 @@ This year the challenge will be to implement a control system that will control 
 
 In addition to completing the challenge, each team must submit a breakdown of work, outlining who performed which tasks in the form of a Markdown file within the team's git repository. The challenge contains four difficulty levels based on academic year.  The required challenge level is determined by the most senior student in the group. For example, if a team contains a fourth-year student, the team is expected to complete the fourth-year challenge level. Generally, it is preferred that groups are made up of the same year so that all team members can provide an equal contribution as members are admitted on an individual basis, not as a full team. 
 
-<span style="color:red">If after reading this PCM sounds like something you'd be interested in, go ahead and complete the development environment setup steps and come back to this document once complete.</span>
+<span style="color:red">If after reading this PCM sounds like something you'd be interested in, go ahead and complete the [development environment setup steps](Guides/DevEnvironmentSetup.md) and come back to this document once complete.</span>
 
 **Note: Student teams consisting of lower levels may complete higher-level challenge tasks as stretch goals if they are interested to increase the depth of their final presentation, however this is not required.**
 
