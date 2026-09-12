@@ -3,10 +3,14 @@ The Propulsion, Controls and Modelling (PCM) sub-team develops the software that
 
 # 2. Introduction
 Hello and welcome to the PCM development challenge, here you will be tasked with implementing a control system in a group of 1-3 people. You will be provided with a model of a system to control (the plant) and a system specification from which requirements can be derived and implemented within MATLAB Simulink. The goal of this challenge is to give you a taste of what it is like to work on PCM, and to give you an opportunity to learn about the software development process.
+
 This year the challenge will be to implement a control system that will control a 10-speed automatic transmission in a longitudinal vehicle model (This means the vehicle will be modeled in terms of its motion along a single axis, forward and backward). The control system will be responsible for determining when to shift gears based on feedback from the vehicle dynamics, as well as other factors such as engine load and throttle position. The control system will also need to ensure that the vehicle operates within certain performance and efficiency requirements.
+
 In addition to completing the challenge, each team must submit a breakdown of work, outlining who performed which tasks in the form of a Markdown file within the team's git repository. The challenge contains four difficulty levels based on academic year.  The required challenge level is determined by the most senior student in the group. For example, if a team contains a fourth-year student, the team is expected to complete the fourth-year challenge level. Generally, it is preferred that groups are made up of the same year so that all team members can provide an equal contribution as members are admitted on an individual basis, not as a full team. 
-If you do decide that you want to complete the PCM dev challenge, go and complete the development environment setup steps and come back to this document once complete
-Note: Student teams consisting of lower levels may complete higher-level challenge tasks as stretch goals if they are interested to increase the depth of their final presentation, however this is not required.
+
+<span style="color:red">If after reading this PCM sounds like something you'd be interested in, go ahead and complete the development environment setup steps and come back to this document once complete.</span>
+
+**Note: Student teams consisting of lower levels may complete higher-level challenge tasks as stretch goals if they are interested to increase the depth of their final presentation, however this is not required.**
 
 # 3. Controls 101
 For those of you who are not familiar with the field of controls, this section introduces several concepts that will appear throughout the challenge.
@@ -69,10 +73,14 @@ Implement a control strategy within Transmission_Controller.slx that satisfies a
 
 ## 4.3. Stage 3: The Testing
 This will be the section of the challenge where you will update the Transmission_Test_Suite.mldatx test suite file to creates that reflect the existing requirements as well as the one you have created. Look through the [insert file name] guide to see how to set up and create test cases. 
+
 The test cases you will be creating will need an input (.mat) file to use to evaluate the test, thus it is expected that you create your own inputs set. You can use the existing inputs sets [insert file name] and modify the signals to represent the situation that your test case is evaluating, so it is strongly recommended that you make a copy of the one of the existing input sets before modifying.  If a requirement states, "the gear selector shall only command PARK if the vehicle speed is below 0.5 m/s", the input must be driven so that the controller behaviour can be triggered to execute the required behaviour.  The purpose of the test suite is to verify that the controller satisfies the requirements documented in Transmission_Requirements.slreqx. Essentially, we are asking that you create a system that constantly checks if certain behaviours are implemented within your controller. An example of this style of logic would be, if variable X is equal to 3 and variable Y is equal to 7, then I expect variable Z to be equal to 5 if the first two conditions are met at the same time. Be sure to allow a buffer of around 10-20 milliseconds delay for each logical and temporal assessment.
+
 There is an existing test case file Transmission_Test_Suite.mldatx that already contains two tests cases for requirements 1.1 and 2.1 as example you can use as a reference. It is expected that each team must create valid test cases for the remaining initial requirements that were given to each team in Transmission_Requirements.slreqx along with the team-derived requirements. 
+
 You will also be expected to observe key metrics to determine the results of any optimization methods. Please refer to EIC Y1 PCM Dev Challenge – Setup document to understand how to run simulations and observe the data across the simulation. There will be two different data sets that will test the acceleration time (0-60 mph) and the vehicle efficiency/drivability. It is recommended you take screenshots of the graphs for these metrics (i.e. time, vehicle speed, efficiency, etc.) along with the relevant input signals. This is so over the course of the optimization process so you can link it back to different methods you may implement, making it easier to understand the work that was done. 
-4.4. Extra Credit
+
+## 4.4. Extra Credit
 - Git [Best Practice](https://about.gitlab.com/topics/version-control/version-control-best-practices/) - It's ok if you don't exactly follow this, as long as valid justification is provided, not just "It was easier" or "I couldn't figure it out"
 - Edge cases - The provided input sets only cover a small subset of the correct possible inputs that the controller may encounter. It is your responsibility to come up with additional test cases that cover edge cases and unexpected behavior. This will ensure that your control system is robust and can handle a wide range of inputs. 
 - For example, an input set that covers some improper drive behavior such as attempting to shift into a gear that would cause the engine to exceed its safe operating limits, or attempting to shift into a gear that is not available in the current transmission state. These types of inputs will help to ensure that your control system is robust and can handle unexpected behavior.
