@@ -117,3 +117,11 @@ Located in the Requirements_Testing folder is a file called `Transmission_Test_S
 ## 3.4. Guides
 - [DevEnvironmentSetup](DevEnvironmentSetup.md): This guide, which you are currently reading, contains instructions on how to set up your development environment and an introduction to the provided files and models.
 - [RequirementsAndTesting](RequirementsAndTesting.md): This guide contains instructions on how to add requirements and test cases to the provided files.
+
+# 4. Running the Model
+![SimulationRun](Images/SimulationRun.png)
+Once you have the project open in MATLAB, you can run the model by opening the `TransmissionSystem.slx` file and clicking the Run button in the Simulink toolbar. This will run the simulation using the default input file `ETRS_DriverLog.mat`. 
+![DataInspectorToolbar](Images/DataInspectorToolbar.png) 
+
+Once the simulation is complete, you will see that the Data Inspector icon has been highlighted. If you click on it you can view the results of the simulation by selecting the signals you want to view in the left panel. Learn more about how to use the data inspector [here](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html).
+![DataInspector](Images/DataInspector.png)
