@@ -111,5 +111,5 @@ Located in the Requirements_Testing folder is a file called `Transmission_Requir
 Located in the Requirements_Testing folder is a file called `Transmission_Test_Suite.mldatx`, this file contains 2 example test cases to get you started. You will need to add your own test cases to this file as when you get to the testing phase of the challenge. The test cases are linked to the requirements in the `Transmission_Requirements.slreqx` file, so when you add your own requirements you will need to add your own test cases as well.
 
 ## 3.4. Guides
-- [DevEnvironmentSetup.md](Guides/DevEnvironmentSetup.md): This guide, which you are currently reading, contains instructions on how to set up your development environment and an introduction to the provided files and models.
-- [RequirementsAndTesting.md](Guides/RequirementsAndTesting.md): This guide contains instructions on how to add requirements and test cases to the provided files.
+- [DevEnvironmentSetup](Guides/DevEnvironmentSetup.md): This guide, which you are currently reading, contains instructions on how to set up your development environment and an introduction to the provided files and models.
+- [RequirementsAndTesting](Guides/RequirementsAndTesting.md): This guide contains instructions on how to add requirements and test cases to the provided files.
