@@ -4,7 +4,7 @@
 3. Using the installer you just downloaded, open it and follow the install process, when you get to the PRODUCTS tab you will need to select the following: MATLAB, Simulink, Simulink Test, Requirements Toolbox, Stateflow, Simscape, Simscape Driveline, Powertrain Blockset, Parallel Computing Toolbox, and Vehicle Dynamics Blockset.
 
 # 2. Forking the Development Challenge Repository
-To ensure each team has its own copy of the challenge, you will create a fork of the repository. A fork is a copy of a repository that exists under your own GitHub account, allowing your team to make changes without affecting the original challenge repository. 
+To ensure each team has its own copy of the challenge, one member of your team will create a fork of the repository. A fork is a copy of a repository that exists under your own GitHub account, allowing your team to make changes without affecting the original challenge repository. 
 ## 2.1. Create a GitHub Account
 If you do not already have a GitHub account:
 1. Select Sign Up in the top right corner of this page.
@@ -21,23 +21,23 @@ If you are working in a group:
 1. Open your forked repository.
 2. Navigate to Settings $\rightarrow$ Collaborators and teams.
 3. Select Add people.
-4. Invite each member of your team using their GitHub username.
+4. Invite each member of your team using their GitHub username or email address.
 5. Ensure all team members accept their invitation before beginning development.
 ## 2.4. Clone the Repository to Your Computer
-Once the repository has been forked, download a local copy to your computer.
+Once the repository has been forked, download (clone) a local copy to your computer.
 1. Open your forked repository on GitHub.
 2. Select the green Code button.
 3. Copy the HTTPS repository URL.
 4. Open a terminal, Git Bash, or command prompt.
-5. Run: git clone https://github.com/\<your-username>/PCM-Dev-Challenge_EIC-Y1.git
-6. Navigate to the repository: cd PCM-Dev-Challenge_EIC-Y1
+5. Run: git clone \<repository URL> (replace \<repository URL> with the URL you copied in step 3)
+6. Navigate to the repository: cd PCM-Dev-Challenge_EIC-Y1 (or the name of your forked repository if you renamed it)
 ## 2.5 Open the Repository in MATLAB
 1. Open MATLAB.
 2. Select Browse for folder, navigate to the folder where you cloned the repository, and select open.
 3. Double click on the `PCM-Dev-Challenge_EIC-Y1.prj` file to open the project in MATLAB.
 
 # 3. Introduction to the Provided Files + Models
-
+Below is a brief introduction to the files and models that have been provided to you for the challenge. 
 
 ## 3.1. Models
 This is where all the simulink models are stored, there are three in total.
@@ -103,12 +103,16 @@ You have been provided with 2 example input files that can be used to test your 
 
 
 ## 3.3. Requirements_Testing
+Refer to the [RequirementsAndTesting](RequirementsAndTesting.md) guide for instructions on how to add requirements and test cases to the provided files.
 
 ### 3.3.1. Requirements
-Located in the Requirements_Testing folder is a file called `Transmission_Requirements.slreqx`, this file contains 4 example requirements to get you started. You will need to add your own requirements to this file as you review the system specifications.
+Located in the Requirements_Testing folder is a file called `Transmission_Requirements.slreqx`, this file contains 4 example requirements to get you started. You will need to add your own requirements to this file as you review and add to the system specifications.
 
 ### 3.3.2. Test Cases
 Located in the Requirements_Testing folder is a file called `Transmission_Test_Suite.mldatx`, this file contains 2 example test cases to get you started. You will need to add your own test cases to this file as when you get to the testing phase of the challenge. The test cases are linked to the requirements in the `Transmission_Requirements.slreqx` file, so when you add your own requirements you will need to add your own test cases as well.
+
+**Note:** For when you are wanting for your test cases to use input other than the  `ETRS_DriverLog.mat` that comes from the replay block, you will need to go to the **PARAMETER OVERRIDES** section of the test case and change the variant Configuration to **Test** and then select the input file you want to use in the **Input File** parameter. This will allow you to use any of the input files that are located in the InputFiles folder.
+![VariantOverride](Images/VariantOverride.png)
 
 ## 3.4. Guides
 - [DevEnvironmentSetup](DevEnvironmentSetup.md): This guide, which you are currently reading, contains instructions on how to set up your development environment and an introduction to the provided files and models.
