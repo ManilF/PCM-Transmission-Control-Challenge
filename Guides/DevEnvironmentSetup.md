@@ -41,7 +41,7 @@ Once the repository has been forked, download a local copy to your computer.
 
 ## 3.1. Models
 This is where all the simulink models are stored, there are three in total.
-- `TransmissionSystem.slx`: The main model that you will be using, this contains the input, output and signal routing. This model also contains the plant and the controller, however only as references.
+- `TransmissionSystem.slx`: The main model that you will be using, this contains the input, output and signal routing. This model also contains the plant and the controller, however only as referenced models (meaning they are just pointers to external model files).
 - `TransmissionPlant.slxp`: The plant model, which models the behaviour of the combustion engine, torque converter, 10-speed transmission, and longitudinal vehicle. This file has been provided in a read-only format as you will not be needing/allowed to edit this during the challenge.
 - `TransmissionController.slx`: The controller model, which has been provided containing a basic controller that you will be modifying and improving during the challenge. 
 
