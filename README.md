@@ -98,7 +98,14 @@ All requirements, controller, and test development must be completed before the 
 
 **Note: Third/fourth-year students are expected to provide optimization results through the previously mentioned key metrics and the optimization process/decisions within the presentation as well.**
 ## 5.1. Submission
-To submit your work, submit a pull request back to the main development challenge repo you initially forked from. Ensure that your pull request includes all requirement files, controller updates, test cases, input files, and team contribution documentation before submission.
+To submit your work, submit a PR (pull request) back to the development challenge repo you initially forked. Ensure that your pull request includes all requirement files, controller updates, test cases, input files, and team contribution documentation before submission. 
+
+![GithubContribute](Guides/Images/GithubContribute.png)
+
+Ensure that the base branch is set to your assigned branch, otherwise the PR will be rejected. Don't worry if you don't have an "Able to merge" checkmark, just submit the PR anyways and we will sort out any issues.
+![Github pr target branch](Guides/Images/GithubTargetBranch.png)
+
+**Important: Before the submission date an annoucement will be made in the PCM Development Challenge teams chanel that will list which branch each team has been assigned to submit a PR into**
 ## 5.2. Key Dates
 - October 2nd 11:59PM: Submission is due (Requirements + Controller + Test)
 - October 4th 1:00PM: Presentations at MARC
