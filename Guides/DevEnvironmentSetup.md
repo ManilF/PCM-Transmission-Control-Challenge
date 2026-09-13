@@ -62,7 +62,7 @@ This is enough such that the TransmissionSystem model will run and produce outpu
 #### 3.1.2.1.Controller Inputs
 - **DriverBrakePedalPosition:** This is the position of the brake pedal, it is a value between 0 and 1 where 0 is no braking and 1 is full braking.
 - **DriverThrottle:** This is the position of the throttle, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
-- **Driver Range Selection:** This is the gear that the driver has selected, it is a is an enumerated value where:
+- **Driver Range Selection:** This is the gear that the driver has selected, it is an enumerated value where:
     - 0 = RangeSelected.Reverse
     - 1 = RangeSelected.Neutral
     - 2 = RangeSelected.Park
@@ -94,7 +94,7 @@ Throttle command $\rightarrow$ Engine $\rightarrow$ Torque Converter $\rightarro
 You have been provided with 2 example input files that can be used to test your controller, these are located in the InputFiles folder. The input files are in .mat format and contain a structure with the following fields:
 - **DriverThrottle:** This is the position of the throttle, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
 - **DriverBrake:** This is the position of the brake pedal, it is a value between 0 and 1 where 0 is no braking and 1 is full braking.
-- **DriverRangeSelection:** This is the gear that the driver has selected, it is a is an enumerated value where:
+- **DriverRangeSelection:** This is the gear that the driver has selected, it is an enumerated value where:
     - 0 = RangeSelected.Reverse
     - 1 = RangeSelected.Neutral
     - 2 = RangeSelected.Park
