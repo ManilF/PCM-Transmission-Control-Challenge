@@ -7,6 +7,7 @@
 
 # Derived content-obscured files
 *.p
+derived/
 
 # Compiled MEX files
 *.mex*
