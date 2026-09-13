@@ -1,6 +1,6 @@
 # 1. Installing MATLAB
 1. Go to the [MathWorks downloads page](https://www.mathworks.com/downloads/) (You may have to sign in, use your McMaster email and password)
-2. Download R2026a
+2. Download R2026a for your operating system
 3. Using the installer you just downloaded, open it and follow the install process, when you get to the PRODUCTS tab you will need to select the following: MATLAB, Simulink, Simulink Test, Requirements Toolbox, Stateflow, Simscape, Simscape Driveline, Powertrain Blockset, Parallel Computing Toolbox, and Vehicle Dynamics Blockset.
 
 # 2. Forking the Development Challenge Repository
