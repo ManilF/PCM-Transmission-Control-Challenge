@@ -46,18 +46,70 @@ This is where all the simulink models are stored, there are three in total.
 - `TransmissionController.slx`: The controller model, which has been provided containing a basic controller that you will be modifying and improving during the challenge. 
 
 ### 3.1.1. TransmissionSystem.slx
-![alt text](Images/TransmissionSystem_TopLevel.png)
+![TransmissionSystem](Images/TransmissionSystem_TopLevel.png)
+- **Inputs:** This is where the three inputs to the system are located, these are the throttle position, brake pedal position, and driver gear selection. The switchs are used to switch between when running the model in simulation mode and when running the model in test mode. In simulation mode the replay block is used to replay the input file `ETRS_DriverLog.mat` which contains a very basic set of inputs that can be used for some basic testing. In test mode the inputs are taken from the inports, which replay them from the input file selected in the test case.
+- **Controller:** This is where the controller model that you will be modifying is located, this is a referenced model and can be opened by double clicking on it. 
+- **Plant:** This is where the plant model is located, you cannot modify this model as it is provided in a read-only format, however you can double-click to open it to view the model and see how it works.
+- **Logging/Output:** This is where the efficiency calculation and vehicle speed conversion happens. There is a scope connected to these signals but it is suggested to use the data explorer to view the signals as it is much easier to use and allows for more functionality. The data explorer can be opened by clicking on the data explorer button in the *Review Results* section of the *Simulation* tab.
+- **Feedback Signals:** These are the signals that are fed back to the controller, these are the vehicle speed, engine speed, and engine power ouput. You can choose to use as many or as few of these signals as you want in your controller, whatever you find works best for your design.
+### 3.1.2. TransmissionController.slx
+![TransmissionController](Images/TransmissionController.png)
 
-### 3.1.2. TransmissionPlant.slxp
+You have been provided with a basic controller that you will be modifying and improving during the challenge. The controller functions on a simple principle of shifting up when the engine reaches 6000 RPM and shifts down when the engine reaches 1500 RPM. 
 
-### 3.1.3. TransmissionController.slx
+This is enough such that the TransmissionSystem model will run and produce output, however it is not a very good controller and will not produce good results or pass test cases. You will need to improve this controller to achieve better results.
 
+#### 3.1.2.1.Controller Inputs
+- **DriverBrakePedalPosition:** This is the position of the brake pedal, it is a value between 0 and 1 where 0 is no braking and 1 is full braking.
+- **DriverThrottle:** This is the position of the throttle, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
+- **Driver Range Selection:** This is the gear that the driver has selected, it is a is an enumerated value where:
+    - 0 = RangeSelected.Reverse
+    - 1 = RangeSelected.Neutral
+    - 2 = RangeSelected.Park
+    - 3 = RangeSelected.Drive
 
+#### 3.1.2.2.Controller Outputs
+- **Throttle:** This is the throttle command that is sent to the plant, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
+- **GearCommand:** This is the gear command that is sent to the plant, it is an enumerated value where -1 is reverse, 0 is neutral, and 1-10 are the forward gears.
+- **Parking Brake Command:** This is the parking brake command that is sent to the plant, it is a boolean value where 0 is no parking brake and 1 is full parking brake.
 
+### 3.1.3. TransmissionPlant.slxp
+![TransmissionPlant](Images/TransmissionPlant.png)
+You don't need to understand exactly how this model works, but in general it models the physical connections from the engine to the wheels, including the torque converter and transmission. The model takes in the throttle position, brake pedal position, and driver gear selection as inputs and produces the vehicle speed, engine speed, and engine power output as outputs.
+
+Throttle command $\rightarrow$ Engine $\rightarrow$ Torque Converter $\rightarrow$ Transmission $\rightarrow$ Rear Axle $\rightarrow$ Wheels
+
+#### 3.1.3.1. Plant Inputs
+- **BrakePedalPosition:** This is the position of the brake pedal, it is a value between 0 and 1 where 0 is no braking and 1 is full braking.
+- **Throttle:** This is the throttle command that is sent to the plant, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
+- **Gear:** This is the gear command that is sent to the plant, it is an enumerated value where -1 is reverse, 0 is neutral, and 1-10 are the forward gears.
+
+#### 3.1.3.2. Plant Outputs
+- **Engine Fuel Consumption Rate:** This is the rate at which fuel is being consumed by the engine, it is a value in kg/s.
+- **Engine Power Output:** This is the power output of the engine, it is a value in Watts.
+- **Vehicle Speed:** This is the speed of the vehicle, it is a value in m/s.
+- **Engine Speed:** This is the speed of the engine, it is a value in RPM.
 
 ## 3.2. InputFiles
+You have been provided with 2 example input files that can be used to test your controller, these are located in the InputFiles folder. The input files are in .mat format and contain a structure with the following fields:
+- **DriverThrottle:** This is the position of the throttle, it is a value between 0 and 1 where 0 is no acceleration and 1 is full acceleration.
+- **DriverBrake:** This is the position of the brake pedal, it is a value between 0 and 1 where 0 is no braking and 1 is full braking.
+- **DriverRangeSelection:** This is the gear that the driver has selected, it is a is an enumerated value where:
+    - 0 = RangeSelected.Reverse
+    - 1 = RangeSelected.Neutral
+    - 2 = RangeSelected.Park
+    - 3 = RangeSelected.Drive
+
+
 
 ## 3.3. Requirements_Testing
 
-## 3.4. Guides
+### 3.3.1. Requirements
+Located in the Requirements_Testing folder is a file called `Transmission_Requirements.slreqx`, this file contains 4 example requirements to get you started. You will need to add your own requirements to this file as you review the system specifications.
 
+### 3.3.2. Test Cases
+Located in the Requirements_Testing folder is a file called `Transmission_Test_Suite.mldatx`, this file contains 2 example test cases to get you started. You will need to add your own test cases to this file as when you get to the testing phase of the challenge. The test cases are linked to the requirements in the `Transmission_Requirements.slreqx` file, so when you add your own requirements you will need to add your own test cases as well.
+
+## 3.4. Guides
+- [DevEnvironmentSetup.md](Guides/DevEnvironmentSetup.md): This guide, which you are currently reading, contains instructions on how to set up your development environment and an introduction to the provided files and models.
+- [RequirementsAndTesting.md](Guides/RequirementsAndTesting.md): This guide contains instructions on how to add requirements and test cases to the provided files.
